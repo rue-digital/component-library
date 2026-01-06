@@ -1,0 +1,35 @@
+body{
+    background-color: papayawhip;
+    color: #7A2E4A;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 200px;
+    background-color: palevioletred;
+    gap: 1px;
+    padding: 1px;
+}
+
+.grid-container > div{
+    /* border: 1px solid palevioletred; */
+    background-color: papayawhip;
+}
+
+.child-cell{
+    height:100%;
+    border:none;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.child-cell:hover{
+    border: 1px solid palevioletred;
+    border-radius: 20px;
+    cursor: pointer;
+    transform: scale(1.02);
+    animation-duration: 0.5s;
+    background-color: #FFF5E1;
+
+}
