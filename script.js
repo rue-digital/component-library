@@ -1,21 +1,37 @@
-var modal = document.getElementsByClassName("modal");
-var modalContainer = document.getElementsByClassName("modal-container");
-var closeBtn = document.getElementsByClassName("close");
+var modal = document.querySelector(".modal");
+var modalContent = document.querySelector(".modal-content");
+var closeBtn = document.querySelector(".close");
 var cells = document.querySelectorAll(".child-cell");
 
 const componentFiles = {
     "base document structure": "components/base-document.html",
     "navigation": "components/navigation.html",
     "button": "components/button.html"
-}
+};
 
+cells.forEach(c => {
+    c.addEventListener('click', async() => {
+        console.log('hi');
+        const componentName = c.innerHTML;
+        const componentFile = componentFiles[componentName];
+        console.log(componentName);
+        console.log(componentFile);
 
-span.onclick = function() {
-    modal.style.display = "none";
-}
+        if(componentFile){
+            try{
+                const htmlContent = await (await fetch(componentFile)).text();
+                modalContent.innerHTML = htmlContent;
+                modal.style.display = 'flex';
 
-window.onclick = function(event) {
-    if(event.target == modal){
-        modal.style.display = "none";
-    }
-}
+            }catch(err){
+                modalContent.innerHTML = `<div>Error loading file</div>`;
+                modal.style.display = 'flex';
+            }
+        }else{
+            modalContent.innerHTML = `<div>cannot find file</div>`;
+        }
+        modal.style.display = 'flex';
+    });
+});
+
+closeBtn.onclick = function() {modal.style.display = "none";}

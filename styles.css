@@ -4,6 +4,38 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.modal {
+    display: none;
+    position: relative;
+    height: 80%;
+    width: 80%;
+    top: 15%;
+    left: 10%;
+    background-color: #F5EAD6;
+    border: solid 4px #FFFBF2;
+    border-radius: 20px;
+    position: fixed;
+    z-index: 1000;
+}
+
+.modal-content{
+    padding: 40px;
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color:  black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .grid-container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
