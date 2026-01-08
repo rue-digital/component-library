@@ -8,9 +8,9 @@ body{
     display: none;
     position: relative;
     height: 80%;
-    width: 80%;
-    top: 15%;
-    left: 10%;
+    width: 45%;
+    top: 10%;
+    left: 27%;
     background-color: #F5EAD6;
     border: solid 4px #FFFBF2;
     border-radius: 20px;
@@ -64,4 +64,12 @@ body{
     animation-duration: 0.5s;
     background-color: #FFF5E1;
 
+}
+
+p {
+    max-width: 68ch;
+}
+
+.code-example{
+    font-family: 'Courier New', Courier, monospace;
 }

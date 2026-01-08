@@ -6,7 +6,12 @@ var cells = document.querySelectorAll(".child-cell");
 const componentFiles = {
     "base document structure": "components/base-document.html",
     "navigation": "components/navigation.html",
-    "button": "components/button.html"
+    "button": "components/button.html",
+    "blockquote": "components/blockquote.html",
+    "tabs": "components/tabs.html",
+    "color picker": "components/color-picker.html",
+    "skip link": "components/skip-link.html",
+    "forms": "components/forms.html"
 };
 
 cells.forEach(c => {
