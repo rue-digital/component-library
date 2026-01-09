@@ -11,7 +11,9 @@ const componentFiles = {
     "tabs": "components/tabs.html",
     "color picker": "components/color-picker.html",
     "skip link": "components/skip-link.html",
-    "forms": "components/forms.html"
+    "forms": "components/forms.html",
+    "&lt;a&gt; (anchor)": "components/anchor.html",
+    "details": "components/details.html"
 };
 
 cells.forEach(c => {

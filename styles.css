@@ -20,6 +20,7 @@ body{
 
 .modal-content{
     padding: 40px;
+    overflow-y: scroll;
 }
 
 .close {

@@ -1,0 +1,26 @@
+<h1>Skip Link</h1>
+<p>Skip links allow people using keyboards, screen readers, and other assistive technologies to reach
+    the main content faster. Commonly, the skip link is the first interactive element on a page, but it is hidden until it receives focus.
+</p>
+<p>To be accessibly for all users, the skip link must:</p>
+
+<ul>
+    <li>be accessibly via keyboard navigation</li>
+    <li>is visually distinctive when focused</li>
+    <li>should set focus to the main content when activated</li>
+</ul>
+<p>To add a skip link, add an anchor element as the first child of the header and link it to the main content. Make sure href value of
+    the skip link matches the id attribute of the main element. Here's an example: 
+</p>
+<code class="code-example">
+    &lt;header&gt; <br>
+    &lt;a href="#main" class="skip"&gt;Skip to main content&lt;/a&gt; <br>
+    ... <br>
+    &lt;/header&gt; <br>
+    &lt;main id="main"&gt; <br>
+    ...
+</code>
+<p>Temporarily hidden skip links can also be used by hiding it off screen with CSS, then allowing it to be visible
+    when it recieves keyboard focus. Hiding the skip link with <code class="code-example">display:none</code> or <code class="code-example">hidden</code> will remove it from keyboard navigation.
+    Instead, make the link the same color as the background or transparent. Use CSS transitions so it remains visible on screen for more time, if necessary.
+</p>

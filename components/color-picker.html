@@ -1,3 +1,14 @@
 <h1>Color Picker</h1>
 <h2>&lt;input type="color"&gt;</h2>
 <p>Input elements of type color allow users to select a color</p>
+<div>
+    <label for="favorite">your favorite color:</label>
+    <input type="color" name="favorite">
+</div>
+<p>Color picker will default to #000000 (black). To customize its value on load, use the value attribute. Add a label tag for best accessibility practices.</p>
+<code class="code-example">
+    &lt;label for="favorite"&gt;your favorite color:&lt;/label&gt; <br>
+    &lt;input type="color" value="#FFC0CB"/&gt;
+</code>
+
+<p>A color's input event is called everytime its color changes. The change change event is fired when the user clicks out of the color picker.</p>
