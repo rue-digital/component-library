@@ -18,11 +18,14 @@ const componentFiles = {
 
 cells.forEach(c => {
     c.addEventListener('click', async() => {
-        console.log('hi');
+
+        // removes hover effect onces a cell is clicked
+        cells.forEach(cell => {cell.style.pointerEvents='none';});
+
         const componentName = c.innerHTML;
         const componentFile = componentFiles[componentName];
-        console.log(componentName);
-        console.log(componentFile);
+        // console.log(componentName);
+        // console.log(componentFile);
 
         if(componentFile){
             try{
@@ -41,4 +44,8 @@ cells.forEach(c => {
     });
 });
 
-closeBtn.onclick = function() {modal.style.display = "none";}
+// on button close, hide modal and allow grid hover effects.
+closeBtn.onclick = function() {
+    modal.style.display = "none";
+    cells.forEach(cell => {cell.style.pointerEvents='auto';});
+}
