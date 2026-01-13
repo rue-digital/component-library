@@ -62,16 +62,16 @@ body{
     height:100%;
     border:none;
     font-family: 'Courier New', Courier, monospace;
+    padding: 0.5rem 0 0 0.5rem;
 }
 
 .child-cell:hover{
     border: 1px solid palevioletred;
     border-radius: 20px;
     cursor: pointer;
-    transform: scale(1.02);
+    transform: scale(1.02) translateY(-4px);
     animation-duration: 0.5s;
     background-color: #FFF5E1;
-
 }
 
 p {
