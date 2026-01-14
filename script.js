@@ -17,43 +17,31 @@ const componentFiles = {
     "details": "components/details.html"
 };
 
-cells.forEach(c => {
+cells.forEach(cell => {
 
     // event is fired when cell is clicked. mouse access
-    c.addEventListener('click', async() => {
-
-        // removes hover effect and tabbing on grid
-        cells.forEach(cell => {
-            cell.style.pointerEvents='none';
-            // cell.removeAttribute('tabindex');
-        });
+    cell.addEventListener('click', async() => {
 
         // fetches componentFile for corresponding cell
-        const componentName = c.innerHTML;
+        const componentName = cell.innerHTML;
         const componentFile = componentFiles[componentName];
 
-        if(componentFile){
-            try{
-                const htmlContent = await (await fetch(componentFile)).text();
-                modalContent.innerHTML = htmlContent;
-                modal.style.display = 'flex';
-
-            }catch(err){
-                modalContent.innerHTML = `<div>Error loading file</div>`;
-                modal.style.display = 'flex';
-            }
-        }else{
-            modalContent.innerHTML = `<div>cannot find file</div>`;
+        try{
+            const htmlContent = await (await fetch(componentFile)).text();
+            modalContent.innerHTML = componentFile ? htmlContent : `<div>cannot find file</div>`;
+        }catch(err){
+            modalContent.innerHTML = `<div>Error loading file</div>`;
         }
-        modal.style.display = 'flex';
+
+        modal.showModal();
         closeBtn.focus();
     });
 
     // event is fired when 'Enter' key is pressed. keyboard access
-    c.addEventListener('keydown', (e) => {
+    cell.addEventListener('keydown', (e) => {
         if (e.key === 'Enter'){ 
-            setFocus(c);
-            c.click();
+            setFocus(cell);
+            cell.click();
         }
     });
 });
@@ -64,21 +52,9 @@ function setFocus(cell){
 
 // on modal close, hide modal and add activate pointer and keyboard interaction
 function closeModal() {
-    modal.style.display = "none";
-    cells.forEach(cell => {
-        cell.style.pointerEvents='auto';
-        // cell.setAttribute('tabindex', '0');
-    });
+    modal.close();
 
     if(lastFocusCell){
         lastFocusCell.focus();
     }
 }
-
-// when close button is clicked, call closeModal()
-closeBtn.addEventListener('click', closeModal);
-
-// when user presses Escape key, call closeModal()
-document.addEventListener('keydown', (e) => {
-    if(e.key === 'Escape') {closeModal();}
-});

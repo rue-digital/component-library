@@ -9,7 +9,7 @@ body{
 }
 
 .modal {
-    display: none;
+    /* all: unset; */
     position: relative;
     height: 80%;
     width: 45%;
