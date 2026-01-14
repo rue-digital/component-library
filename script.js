@@ -49,11 +49,19 @@ cells.forEach(c => {
     });
 });
 
-// on button close, hide modal and allow grid hover effects.
-closeBtn.onclick = function() {
+// on modal close, hide modal and add activate pointer and keyboard interaction
+function closeModal() {
     modal.style.display = "none";
     cells.forEach(cell => {
         cell.style.pointerEvents='auto';
         // cell.setAttribute('tabindex', '0');
     });
 }
+
+// when close button is clicked, call closeModal()
+closeBtn.addEventListener('click', closeModal);
+
+// when user presses Escape key, call closeModal()
+document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape') {closeModal();}
+});
