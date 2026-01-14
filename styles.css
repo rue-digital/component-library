@@ -63,17 +63,19 @@ body{
 }
 
 .child-cell{
+    /* all: unset; */
     height:100%;
     border:none;
     font-family: 'Courier New', Courier, monospace;
     padding: 0.5rem 0 0 0.5rem;
+    background-color: papayawhip;
 }
 
 .child-cell:hover, .child-cell:focus-visible{
     border: 1px solid palevioletred;
     border-radius: 20px;
     cursor: pointer;
-    transform: scale(1.02) translateY(-4px);
+    transform: scale(1.05) translateY(-4px);
     animation-duration: 0.5s;
     background-color: #FFF5E1;
 }

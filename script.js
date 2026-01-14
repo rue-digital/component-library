@@ -22,7 +22,7 @@ cells.forEach(c => {
         // removes hover effect and tabbing onces a cell is clicked
         cells.forEach(cell => {
             cell.style.pointerEvents='none';
-            cell.removeAttribute('tabindex');
+            // cell.removeAttribute('tabindex');
         });
 
         const componentName = c.innerHTML;
@@ -54,6 +54,6 @@ closeBtn.onclick = function() {
     modal.style.display = "none";
     cells.forEach(cell => {
         cell.style.pointerEvents='auto';
-        cell.setAttribute('tabindex', '0');
+        // cell.setAttribute('tabindex', '0');
     });
 }
