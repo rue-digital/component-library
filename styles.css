@@ -69,7 +69,7 @@ body{
     padding: 0.5rem 0 0 0.5rem;
 }
 
-.child-cell:hover{
+.child-cell:hover, .child-cell:focus-visible{
     border: 1px solid palevioletred;
     border-radius: 20px;
     cursor: pointer;
