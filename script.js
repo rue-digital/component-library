@@ -2,6 +2,7 @@ var modal = document.querySelector(".modal");
 var modalContent = document.querySelector(".modal-content");
 var closeBtn = document.querySelector(".close");
 var cells = document.querySelectorAll(".child-cell");
+let lastFocusCell = null;
 
 const componentFiles = {
     "base document structure": "components/base-document.html",
@@ -17,14 +18,17 @@ const componentFiles = {
 };
 
 cells.forEach(c => {
+
+    // event is fired when cell is clicked. mouse access
     c.addEventListener('click', async() => {
 
-        // removes hover effect and tabbing onces a cell is clicked
+        // removes hover effect and tabbing on grid
         cells.forEach(cell => {
             cell.style.pointerEvents='none';
             // cell.removeAttribute('tabindex');
         });
 
+        // fetches componentFile for corresponding cell
         const componentName = c.innerHTML;
         const componentFile = componentFiles[componentName];
 
@@ -42,12 +46,21 @@ cells.forEach(c => {
             modalContent.innerHTML = `<div>cannot find file</div>`;
         }
         modal.style.display = 'flex';
+        closeBtn.focus();
     });
 
+    // event is fired when 'Enter' key is pressed. keyboard access
     c.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter'){ c.click();}
+        if (e.key === 'Enter'){ 
+            setFocus(c);
+            c.click();
+        }
     });
 });
+
+function setFocus(cell){
+    lastFocusCell = cell;
+}
 
 // on modal close, hide modal and add activate pointer and keyboard interaction
 function closeModal() {
@@ -56,6 +69,10 @@ function closeModal() {
         cell.style.pointerEvents='auto';
         // cell.setAttribute('tabindex', '0');
     });
+
+    if(lastFocusCell){
+        lastFocusCell.focus();
+    }
 }
 
 // when close button is clicked, call closeModal()
