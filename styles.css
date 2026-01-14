@@ -29,11 +29,15 @@ body{
 }
 
 .close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     right: 10px;
     color: #aaa;
     font-size: 28px;
     font-weight: bold;
+    height: 2rem;
 }
 
 .close:hover, .close:focus {
