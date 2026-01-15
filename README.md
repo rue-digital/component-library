@@ -9,3 +9,11 @@ Users can click on common HTML elements to learn what they do and how they’re 
 Clone the repository:
 ```bash
 git clone git@github.com:rue-digital/component-library.git
+```
+
+### Running Locally
+This project uses the Fetch API and must be served over HTTP.
+```bash
+python3 -m http.server
+```
+Then open the address printed in the terminal.
