@@ -10,15 +10,11 @@ body{
 
 .modal {
     /* all: unset; */
-    position: relative;
     height: 80%;
     width: 45%;
-    top: 10%;
-    left: 27%;
     background-color: #F5EAD6;
     border: solid 4px #FFFBF2;
     border-radius: 20px;
-    position: fixed;
     z-index: 1000;
     pointer-events: all;
 }
@@ -26,6 +22,7 @@ body{
 .modal-content{
     padding: 40px;
     overflow-y: scroll;
+    color: #7A2E4A;
 }
 
 .close {
