@@ -13,29 +13,29 @@
     </header>
     
     <dialog class="modal">
-        <button class="close" aria-label="Close modal" type="button" onClick="closeModal()" autofocus>
+        <button class="modal__close" aria-label="Close modal" type="button" onClick="closeModal()" autofocus>
             &times;
         </button>
-        <div class="modal-content"></div>
+        <div class="modal__content"></div>
     </dialog>
 
-    <div class="grid-container">
-        <button class="child-cell" type="button" onClick="openModal('base-document')">base document structure</button>
-        <button class="child-cell" type="button" onClick="openModal('navigation')">navigation</button>
-        <button class="child-cell" type="button" onClick="openModal('button')">button</button>
-        <button class="child-cell" type="button" onClick="openModal('blockquote')">blockquote</button>
-        <button class="child-cell" type="button" onClick="openModal('tabs')">tabs</button>
-        <button class="child-cell" type="button" onClick="openModal('color-picker')">color picker</button>
-        <button class="child-cell" type="button" onClick="openModal('skip-link')">skip link</button>
-        <button class="child-cell" type="button" onClick="openModal('anchor')">&lt;a&gt; (anchor)</button>
-        <button class="child-cell" type="button" onClick="openModal('forms')">forms</button>
-        <button class="child-cell" type="button" onClick="openModal('text-inputs')">text inputs</button>
-        <button class="child-cell" type="button" onClick="openModal('checkboxes-radio')">checkboxes & radio buttons</button>
-        <button class="child-cell" type="button" onClick="openModal('submit-button')">submit button</button>
-        <button class="child-cell" type="button" onClick="openModal('data-table')">data table</button>
-        <button class="child-cell" type="button" onClick="openModal('images')">images</button>
-        <button class="child-cell" type="button" onClick="openModal('details')">details</button>
-        <button class="child-cell" type="button" onClick="openModal('dropdown')">dropdown menu structure</button>
+    <div class="grid grid-skin">
+        <button class="grid__cell" type="button" onClick="openModal('base-document')">base document structure</button>
+        <button class="grid__cell" type="button" onClick="openModal('navigation')">navigation</button>
+        <button class="grid__cell" type="button" onClick="openModal('button')">button</button>
+        <button class="grid__cell" type="button" onClick="openModal('blockquote')">blockquote</button>
+        <button class="grid__cell" type="button" onClick="openModal('tabs')">tabs</button>
+        <button class="grid__cell" type="button" onClick="openModal('color-picker')">color picker</button>
+        <button class="grid__cell" type="button" onClick="openModal('skip-link')">skip link</button>
+        <button class="grid__cell" type="button" onClick="openModal('anchor')">&lt;a&gt; (anchor)</button>
+        <button class="grid__cell" type="button" onClick="openModal('forms')">forms</button>
+        <button class="grid__cell" type="button" onClick="openModal('text-inputs')">text inputs</button>
+        <button class="grid__cell" type="button" onClick="openModal('checkboxes-radio')">checkboxes & radio buttons</button>
+        <button class="grid__cell" type="button" onClick="openModal('submit-button')">submit button</button>
+        <button class="grid__cell" type="button" onClick="openModal('data-table')">data table</button>
+        <button class="grid__cell" type="button" onClick="openModal('images')">images</button>
+        <button class="grid__cell" type="button" onClick="openModal('details')">details</button>
+        <button class="grid__cell" type="button" onClick="openModal('dropdown')">dropdown menu structure</button>
     </div>
     <script src="script.js"></script>
 </body>

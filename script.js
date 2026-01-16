@@ -1,5 +1,5 @@
 var modal = document.querySelector(".modal");
-var modalContent = document.querySelector(".modal-content");
+var modalContent = document.querySelector(".modal__content");
 
 
 async function openModal(cellFileName){
